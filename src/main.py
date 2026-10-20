@@ -1,9 +1,9 @@
 def preparar_texto(frase: str) -> str:
     """
-    Elimina los espacios de los extremos y convierte el texto a minúsculas.
+    Elimina los espacios de los extremos y convierte el texto a minusculas.
 
-    :param frase: Frase original introducida por el usuario
-    :return: Texto preparado (sin espacios extremos y en minúsculas)
+    :param frase: frase original introducida 
+    :return: Texto preparado (sin espacios extremos y en minsculas)
     """
     return frase.strip().lower()
 
@@ -12,8 +12,8 @@ def analizar_texto(frase: str) -> tuple[int, int, bool]:
     """
     Analiza el texto preparado y calcula caracteres, palabras y si contiene "python".
 
-    :param frase: Texto ya preparado (minúsculas y sin espacios extremos)
-    :return: Tupla con (número de caracteres, número de palabras, contiene "python")
+    :param frase: Texto ya preparado (minusculas y sin espacios extremos)
+    :return: Tupla con (numero de caracteres, numero de palabras contiene "python")
     """
     num_caracteres: int = len(frase)
     palabras: list[str] = frase.split()
@@ -23,13 +23,13 @@ def analizar_texto(frase: str) -> tuple[int, int, bool]:
     return num_caracteres, num_palabras, contiene_python
 
 
-def main() -> None:
+def main():
     frase: str = input()
 
     texto_preparado: str = preparar_texto(frase)
 
     if not texto_preparado:
-        print("Error: la frase está vacía")
+        print("Error: la frase esta vacia")
     else:
         caracteres, palabras, contiene = analizar_texto(texto_preparado)
 
